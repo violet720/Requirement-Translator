@@ -1,26 +1,22 @@
 # Requirement Translator
 
-AI 輔助的跨角色需求轉譯工具雛形。
+AI 輔助的跨角色需求轉譯工具雛型。
 
-## 專案簡介
+## 專案說明
 
-Requirement Translator 是一個以 PM 與系統分析角色為出發點所設計的需求轉譯原型，目的是協助使用者辨識模糊需求、整理待確認資訊，並將較口語化的客戶需求，轉化為較具結構的技術討論內容。
+Requirement Translator 是一個以 PM 與系統分析情境為出發點所設計的需求轉譯 prototype。
 
-在跨部門協作中，客戶、PM 與工程師往往站在不同角色與專業背景下理解同一個需求，因此容易產生資訊落差、理解不一致，甚至影響後續實作。
+專案主要處理的問題，是客戶、PM 與工程端在需求溝通過程中，可能因角色與專業背景不同，而對同一句需求產生不同理解。
 
-這個專案希望處理的是「如何讓不同角色更清楚地理解彼此」。
+例如：
 
-## 問題情境
+- 希望系統快一點
+- 操作可以更方便
+- 最好不要每次都輸入密碼
 
-客戶提出的需求，常常會包含較模糊或主觀的描述，例如：
+這些需求在溝通上可以理解，但若要進一步交付工程端實作，仍需要補充更明確的條件。
 
-- 「希望系統快一點」
-- 「操作可以更方便」
-- 「最好不要每次都輸入密碼」
-
-這些表達在溝通上可以被理解，但對工程實作而言，仍缺乏明確且可驗證的條件。
-
-因此，系統不直接替使用者假設答案，而是先辨識模糊資訊，再提出需要進一步確認的問題。
+因此，本工具的設計重點不是直接替使用者補完需求，而是先辨識模糊資訊，提出需要確認的問題，再透過人工補充逐步形成較具體的需求內容。
 
 ## 核心流程
 
@@ -42,19 +38,20 @@ Client Requirement
 
 ## 主要功能
 
-- 區分 Functional Requirements 與 Non-functional Requirements
-- 辨識模糊或主觀描述
-- 產生 Questions to Clarify
-- 提供 PM View
-- 提供 Engineer View
-- 產生 User Story
-- 產生 Acceptance Criteria
-- 支援 Clarification / Refine 流程
-- 顯示 Before / After 對照
-- 顯示 Confidence Level
-- 保留 Human Review Required 提醒
+- Functional Requirements 分類
+- Non-functional Requirements 分類
+- Ambiguity Detection
+- Questions to Clarify
+- PM View
+- Engineer View
+- User Story
+- Acceptance Criteria
+- Clarification / Refine 流程
+- Before / After 對照
+- Confidence Level
+- Human Review Required 提醒
 
-## 範例
+## 操作範例
 
 ### Before
 
@@ -72,39 +69,40 @@ Client Requirement
 - 系統應支援 Google 或 Apple 第三方登入。
 - 登入狀態可保存最多 30 天。
 
-## 人機協作方式
+## 專案角色與實作方式
 
-本專案為人機協作成果。
+本專案採人機協作方式完成。
 
-AI 工具協助我完成部分程式實作與debug，而我主要負責：
+AI 工具協助部分程式實作與debug，我主要負責：
 
 - 問題定義
-- 需求設計
-- 功能流程設計
-- 資訊架構
-- 介面方向
+- 需求流程設計
+- 資訊架構規劃
+- PM / Engineer 視角設計
 - 功能取捨
-- 測試與修正
+- 使用情境測試
+- 介面調整與修正
 
-對我而言，AI 並不是替我完成整個專案，而是協助我把原本較模糊的想法，轉化成可以實際操作與測試的 prototype。
+專案開發過程中，我特別關注的是如何將模糊需求逐步轉化為可以被不同角色共同理解與討論的資訊。
 
-## 為什麼做這個專案
+## 專案與研究興趣的關係
 
-我關注的研究問題之一，是不同專業角色之間如何進行需求理解與資訊轉譯。
+這個 prototype 與我目前關注的研究方向有直接關聯。
 
-尤其在企業專案情境中，PM 經常需要在客戶端的商業需求與工程端的技術限制之間進行溝通與協調。
+我希望進一步理解，在跨專業合作情境中，PM 如何在客戶需求與工程規格之間進行資訊轉譯，以及 GenAI 是否能在需求整理、資訊理解與跨角色溝通中提供協助。
 
-因此，我希望透過 Requirement Translator，初步探索資訊科技與 AI 是否能協助整理需求、辨識資訊落差，並支援跨角色溝通。
+Requirement Translator 是我將這個問題先轉化為實作原型的一次嘗試。
 
-## 未來可延伸方向
+## 未來規劃
 
-- 串接生成式 AI 模型
-- 支援更複雜的企業需求情境
-- 產生結構化 Requirement Specification
-- 增加需求版本追蹤
-- 支援多角色協作
-- 匯出需求文件
-- 加入更多產業情境與測試案例
+後續希望進一步加入：
+
+- 生成式 AI 模型串接
+- 更複雜的企業需求案例
+- 結構化 Requirement Specification
+- 需求版本紀錄
+- 文件匯出
+- 多角色協作情境
 
 ## Live Demo
 
